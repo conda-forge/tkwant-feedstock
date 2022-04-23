@@ -15,7 +15,7 @@ source:
 build:
   skip: true  # [py2k]
   skip: true  # [py>=38]
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -49,8 +49,6 @@ test:
   imports:
     - tkwant
   commands:
-    - conda inspect linkages -p $PREFIX tkwant  # [not win]
-    - conda inspect objects -p $PREFIX tkwant  # [osx]
 
 about:
   home: https://kwant-project.org/extensions/tkwant/
