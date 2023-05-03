@@ -1,20 +1,19 @@
 {% set name = "tkwant" %}
-{% set version = "1.1.0.a0" %}
+{% set version = "1.1.0a0" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}-9306ae4a3830d4a36f115577a7c6c8906cc61e8e.tar.gz
+  fn: {{ name }}-{{ version }}.tar.gz
   url: https://gitlab.kwant-project.org/kwant/{{ name }}/-/archive/v{{ version }}/{{ name }}-v{{ version }}.tar.gz
-  sha256: bfaa7c8fabdcb7edb39d76175d1052f3449400d68ebd6c3348e504080854ce7e
+  sha256: dd417c369074e1b56f36d4189ac199a2c26575cc7e995344a3e9777ede7576d8
   patches:
     - requirement_patch.diff
 
 build:
   skip: true  # [py2k]
-  skip: true  # [py>=38]
   number: 0
 
 requirements:
@@ -43,7 +42,7 @@ requirements:
     - kwant
     - kwantspectrum
     - vc 14  # [win and py>=35]
-    - mpi4py  # [not win]
+    - mpi4py
 
 test:
   imports:
@@ -51,7 +50,7 @@ test:
   commands:
 
 about:
-  home: https://kwant-project.org/extensions/tkwant/
+  home: https://tkwant.kwant-project.org/
   license: BSD-2-Clause
   license_file: LICENSE.rst
   license_family: BSD
