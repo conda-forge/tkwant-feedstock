@@ -14,6 +14,7 @@ source:
 
 build:
   skip: true  # [py2k]
+  skip: true  # [py>=38]
   number: 0
 
 requirements:
@@ -42,7 +43,7 @@ requirements:
     - kwant
     - kwantspectrum
     - vc 14  # [win and py>=35]
-    - mpi4py
+    - mpi4py  # [not win]
 
 test:
   imports:
