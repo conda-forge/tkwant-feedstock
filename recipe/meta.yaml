@@ -8,13 +8,12 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://gitlab.kwant-project.org/kwant/{{ name }}/-/archive/v{{ version }}/{{ name }}-v{{ version }}.tar.gz
-  sha256: dd417c369074e1b56f36d4189ac199a2c26575cc7e995344a3e9777ede7576d8
+  sha256: 7bdd2a6cbb1964ecbc8ff3785548b6ddad680e7769861dca1ddda6bcc59dedf9
   patches:
     - requirement_patch.diff
 
 build:
   skip: true  # [py2k]
-  skip: true  # [py>=38]
   number: 0
 
 requirements:
@@ -43,7 +42,7 @@ requirements:
     - kwant
     - kwantspectrum
     - vc 14  # [win and py>=35]
-    - mpi4py  # [not win]
+    - mpi4py
 
 test:
   imports:
