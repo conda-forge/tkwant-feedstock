@@ -8,7 +8,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://gitlab.kwant-project.org/kwant/{{ name }}/-/archive/v{{ version }}/{{ name }}-v{{ version }}.tar.gz
-  sha256: 7bdd2a6cbb1964ecbc8ff3785548b6ddad680e7769861dca1ddda6bcc59dedf9
+  sha256: b5da6bfed0721c9f1023a5be965dfc65775a36d80022b03465aee0297038528d
   patches:
     - requirement_patch.diff
 
