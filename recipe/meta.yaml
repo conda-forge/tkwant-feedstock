@@ -48,6 +48,9 @@ test:
   imports:
     - tkwant
   commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://tkwant.kwant-project.org/
