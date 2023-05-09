@@ -41,7 +41,6 @@ requirements:
     - matplotlib-base
     - kwant
     - kwantspectrum
-    - vc 14  # [win and py>=35]
     - mpi4py
 
 test:
