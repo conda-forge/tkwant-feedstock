@@ -1,5 +1,5 @@
 {% set name = "tkwant" %}
-{% set version = "1.1.0a0" %}
+{% set version = "1.1.0rc1" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://gitlab.kwant-project.org/kwant/{{ name }}/-/archive/v{{ version }}/{{ name }}-v{{ version }}.tar.gz
-  sha256: b5da6bfed0721c9f1023a5be965dfc65775a36d80022b03465aee0297038528d
+  sha256: 226ca32cc11600631b3574cd10f190e166dc919d105e809e47dec16d4594f56d
   patches:
     - requirement_patch.diff
 
@@ -32,6 +32,7 @@ requirements:
   run:
     - python
     - {{ pin_compatible('numpy') }}
+    - cython
     - scipy
     - pytest
     - sympy
