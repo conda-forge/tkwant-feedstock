@@ -1,5 +1,5 @@
 {% set name = "tkwant" %}
-{% set version = "1.1.0rc1" %}
+{% set version = "1.1.0rc2" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://gitlab.kwant-project.org/kwant/{{ name }}/-/archive/v{{ version }}/{{ name }}-v{{ version }}.tar.gz
-  sha256: 7ca041cd99446b9b6cb78dfc911224eb25ca81dde53dec96e6fbd8ab39f0e4c6
+  sha256: 6c869c022ddff6828f227c488bba9eda6ac92eb73176a02e9289461a63178be9
   patches:
     - requirement_patch.diff
 
