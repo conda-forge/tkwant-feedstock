@@ -13,6 +13,7 @@ source:
 
 build:
   number: 0
+  skip: true  # [osx and py>38]
 
 requirements:
   build:
@@ -28,11 +29,6 @@ requirements:
     - numpy
     - scipy
     - pytest-runner
-    - python
-    # Pin the Python version to 3.8 for OSX
-    - python >=3.8,<3.9 [target_platform=osx-64]
-    # Other platforms (Linux and Windows) have no restrictions
-    - python [not target_platform=osx-64]
   run:
     - python
     - {{ pin_compatible('numpy') }}
