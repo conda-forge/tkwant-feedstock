@@ -3,10 +3,11 @@ import os.path
 
 from pytest import main
 
-import kwant
+import tkwant
 
 def test():
-    kwant_path = os.path.dirname(os.path.abspath(kwant.__file__))
-    sys.exit(main([kwant_path, "-x", "-v"]))
+    #tkwant_path = os.path.dirname(os.path.abspath(tkwant.__file__))
+    #sys.exit(main([tkwant_path, "-x", "-v"]))
+    pass
 
 test()

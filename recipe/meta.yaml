@@ -1,21 +1,19 @@
 {% set name = "tkwant" %}
-{% set version = "1.0.1" %}
+{% set version = "1.1.0rc2" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://gitlab.kwant-project.org/kwant/{{ name }}/-/archive/v{{ version }}/{{ name }}-v{{ version }}.tar.gz
-  sha256: 383f99375a29478216a65e43b16c28408e0c014696238e7f379a85f83f9d4d7c
+  sha256: 6c869c022ddff6828f227c488bba9eda6ac92eb73176a02e9289461a63178be9
   patches:
     - requirement_patch.diff
 
 build:
-  skip: true  # [py2k]
-  skip: true  # [py>=38]
   number: 0
+  skip: true  # [osx and py>38]
 
 requirements:
   build:
@@ -34,6 +32,7 @@ requirements:
   run:
     - python
     - {{ pin_compatible('numpy') }}
+    - cython
     - scipy
     - pytest
     - sympy
@@ -42,18 +41,18 @@ requirements:
     - matplotlib-base
     - kwant
     - kwantspectrum
-    - vc 14  # [win and py>=35]
-    - mpi4py  # [not win]
+    - mpi4py
 
 test:
   imports:
     - tkwant
   commands:
-    - conda inspect linkages -p $PREFIX tkwant  # [not win]
-    - conda inspect objects -p $PREFIX tkwant  # [osx]
+    - pip check
+  requires:
+    - pip
 
 about:
-  home: https://kwant-project.org/extensions/tkwant/
+  home: https://tkwant.kwant-project.org/
   license: BSD-2-Clause
   license_file: LICENSE.rst
   license_family: BSD
@@ -62,7 +61,7 @@ about:
     Tkwant is a python package to simulate time-dependent quantum dynamics of
     mesoscopic systems. It is the time-dependent generalization of the
     Kwant package and distributed under 2-clause BSD license.
-  doc_url: https://kwant-project.org/extensions/tkwant/
+  doc_url: https://tkwant.kwant-project.org/doc/stable/
   dev_url: https://gitlab.kwant-project.org/kwant/tkwant/
 
 extra:
