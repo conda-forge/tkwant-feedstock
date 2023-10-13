@@ -12,7 +12,7 @@ source:
     - requirement_patch.diff
 
 build:
-  number: 0
+  number: 1
   skip: true  # [osx and py>38]
 
 requirements:
