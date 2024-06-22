@@ -12,13 +12,14 @@ source:
     - requirement_patch.diff
 
 build:
-  number: 0
+  number: 1
   skip: true  # [osx and py>38]
 
 requirements:
   build:
     - {{ compiler('fortran') }}
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
   host:
     - setuptools
@@ -31,7 +32,6 @@ requirements:
     - pytest-runner
   run:
     - python
-    - {{ pin_compatible('numpy') }}
     - cython
     - scipy
     - pytest
